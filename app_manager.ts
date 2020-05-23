@@ -4,6 +4,6 @@ export class LoginHelper{
 }
 
 class AppManager{
-     login = new LoginHelper()
+     public login = new LoginHelper()
 }
 
