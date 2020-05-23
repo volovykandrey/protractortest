@@ -16,7 +16,7 @@ describe("Calculator test", function(){
         var el = element(by.id("username"));
         el.sendKeys("dev@signalvine.com")
         element(by.id("password")).sendKeys("Password123!")
-        element(by.xpath("//button[contains(.,'Log In')]")).click
+        element(by.xpath("//button[contains(.,'Log In')]")).click()
         })
 
 })
