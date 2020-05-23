@@ -8,3 +8,4 @@ class LoginHelper{
     public static error = element(by.xpath("[class='error']"))
 
 }
+

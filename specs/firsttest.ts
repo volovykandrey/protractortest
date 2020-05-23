@@ -1,9 +1,13 @@
 import { brotliCompress } from "zlib";
 import { browser, element, by } from "protractor";
+export class AppManager{} 
 
 describe("Calculator test", function(){
+    let app = new AppManager()
 
     beforeAll(function(){
+        let app = new AppManager()
+        app
         browser.get("https://app-qatest306.sse.signalvine.com/")
         browser.driver.manage().window().maximize();
     })
