@@ -5,6 +5,6 @@ exports.config = {
     capabilities: {
         browserName: 'chrome'
     },
-    specs: ['./specs/calculator.js'],
+    specs: ['./specs/firsttest.js'],
     seleniumAddress: 'http://localhost:4444/wd/hub'
 };
