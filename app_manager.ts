@@ -1,9 +1,7 @@
-export class LoginHelper{
+import LoginHelper from "./screenHelper/loginHelper";
 
 
-}
-
-class AppManager{
-     public login = new LoginHelper()
+export default class AppManager {
+    login = new LoginHelper()
 }
 

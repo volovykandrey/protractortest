@@ -1,15 +1,11 @@
-import { brotliCompress } from "zlib";
 import { browser, element, by } from "protractor";
-export class AppManager{} 
+import AppManager from "../app_manager";
 
 describe("Calculator test", function(){
     let app = new AppManager()
-
     beforeAll(function(){
-        let app = new AppManager()
-        app
         browser.get("https://app-qatest306.sse.signalvine.com/")
-        browser.driver.manage().window().maximize();
+        browser.driver.manage().window().maximize()
     })
 
     it("Launch url check", function(){
@@ -17,10 +13,7 @@ describe("Calculator test", function(){
     })
 
     it("Log In", function(){
-        var el = element(by.id("username"));
-        el.sendKeys("dev@signalvine.com")
-        element(by.id("password")).sendKeys("Password123!")
-        element(by.xpath("//button[contains(.,'Log In')]")).click()
+        app.login.performLogIn()
         })
 
 })

@@ -1,7 +1,12 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var protractor_1 = require("protractor");
+var app_manager_1 = __importDefault(require("../app_manager"));
 describe("Calculator test", function () {
+    var app = new app_manager_1.default();
     beforeAll(function () {
         protractor_1.browser.get("https://app-qatest306.sse.signalvine.com/");
         protractor_1.browser.driver.manage().window().maximize();
@@ -10,9 +15,6 @@ describe("Calculator test", function () {
         expect(protractor_1.browser.getTitle()).toContain("Signal Vine Login");
     });
     it("Log In", function () {
-        var el = protractor_1.element(protractor_1.by.id("username"));
-        el.sendKeys("dev@signalvine.com");
-        protractor_1.element(protractor_1.by.id("password")).sendKeys("Password123!");
-        protractor_1.element(protractor_1.by.xpath("//button[contains(.,'Log In')]")).click;
+        app.login.performLogIn();
     });
 });

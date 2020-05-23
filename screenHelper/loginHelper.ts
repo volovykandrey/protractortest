@@ -1,11 +1,17 @@
 import { browser, element, by } from "protractor";
 
-class LoginHelper{
-    public static loginField = element(by.id("username"))
-    public static passwordField = element(by.id("password"))
-    public static logInButton = element(by.xpath("//button[contains(.,'Log In')]"))
-    public static logo = element(by.xpath("//h1[@id='logo']"))
-    public static error = element(by.xpath("[class='error']"))
+export default class LoginHelper{
+    public loginField = element(by.id("username"))
+    public passwordField = element(by.id("password"))
+    public logInButton = element(by.xpath("//button[contains(.,'Log In')]"))
+    public logo = element(by.xpath("//h1[@id='logo']"))
+    public error = element(by.xpath("[class='error']"))
+
+    public performLogIn(){
+        this.loginField.sendKeys("dev@signalvine.com")
+        this.passwordField.sendKeys("Password123!")
+        this.logInButton.click()
+    }
 
 }
 
