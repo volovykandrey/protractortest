@@ -3,7 +3,7 @@ import { browser, element, by } from "protractor";
 
 describe("Calculator test", function(){
 
-    beforeEach(function(){
+    beforeAll(function(){
         browser.get("https://app-qatest306.sse.signalvine.com/")
         browser.driver.manage().window().maximize();
     })
@@ -13,19 +13,10 @@ describe("Calculator test", function(){
     })
 
     it("Log In", function(){
-        element(by.id("username")).sendKeys("dev@signalvine.com")
+        var el = element(by.id("username"));
+        el.sendKeys("dev@signalvine.com")
         element(by.id("password")).sendKeys("Password123!")
         element(by.xpath("//button[contains(.,'Log In')]")).click
         })
-
-    it("Log In", function(){
-            element(by.id("username")).sendKeys("dev@signalvine.com")
-            element(by.id("password")).sendKeys("Password123!")
-            element(by.xpath("//button[contains(.,'Log In')]")).click
-        })
-
-    var hui = by.id("username")
-    var hu2 = 7
-
 
 })
