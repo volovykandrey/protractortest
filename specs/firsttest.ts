@@ -4,7 +4,7 @@ import AppManager from "../app_manager";
 describe("Calculator test", function(){
     let app = new AppManager()
     beforeAll(function(){
-        browser.get("https://app-qatest306.sse.signalvine.com/")
+        browser.get("https://app-svc306.sse.signalvine.com/")
         browser.driver.manage().window().maximize()
     })
 
