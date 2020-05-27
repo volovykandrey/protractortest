@@ -1,4 +1,6 @@
-import { browser, element, by } from "protractor";
+import {element, by, browser, ExpectedConditions} from "protractor";
+import MessageHelper from "./messageHelper";
+import MainMenuHelper from "./mainMenuHelper";
 
 export default class LoginHelper{
     public loginField = element(by.id("username"))
@@ -7,10 +9,11 @@ export default class LoginHelper{
     public logo = element(by.xpath("//h1[@id='logo']"))
     public error = element(by.xpath("[class='error']"))
 
-    public performLogIn(){
+    public performLogIn() {
         this.loginField.sendKeys("dev@signalvine.com")
         this.passwordField.sendKeys("Password123!")
         this.logInButton.click()
+        return new MainMenuHelper();
     }
 
 }

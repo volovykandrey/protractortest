@@ -1,7 +1,7 @@
-import { browser, element, by } from "protractor";
+import {browser, element, by, WebDriver} from "protractor";
 import AppManager from "../app_manager";
 
-describe("Calculator test", function(){
+describe("First test", function(){
     let app = new AppManager()
     beforeAll(function(){
         browser.get("https://app-svc306.sse.signalvine.com/")
@@ -14,6 +14,8 @@ describe("Calculator test", function(){
 
     it("Log In", function(){
         app.login.performLogIn()
+            .clickOnTheMessagesTab()
+            .clickOnTheNewMessageButton()
+            //WebDriver.prototype.sleep(7000)
         })
-
 })
